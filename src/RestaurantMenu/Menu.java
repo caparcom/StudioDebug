@@ -1,32 +1,43 @@
 package RestaurantMenu;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Menu {
-    //variables
-    private MenuItems item;
-    public ArrayList<MenuItems> menu;
+public class Menu extends MenuItem {
 
-    //constructors
-    public Menu(MenuItems item) {
-        this.item = item;
+    private MenuItem newItem = new MenuItem();
+    private static List<Object> holyMoleyAMenu = new ArrayList<>();
+
+    public Menu(){}
+
+    public Menu(MenuItem newItem){
+        this.newItem = newItem;
     }
 
-    public Menu() {
-
+    public MenuItem getNewItem() {
+        return newItem;
     }
 
-    //getters and setters
-    public void setItem(){
-        this.item = item;
-    }
-    public MenuItems getItem(){
-        return item;
+    public void setNewItem(MenuItem newItem) {
+        this.newItem = newItem;
     }
 
-    //methods
-    public void addMenuItem(MenuItems item){
-        menu.add(item);
+    public List<Object> getHolyMoleyAMenu() {
+        return holyMoleyAMenu;
+    }
+
+    public void setHolyMoleyAMenu(List<Object> holyMoleyAMenu) {
+        this.holyMoleyAMenu = holyMoleyAMenu;
+    }
+
+
+    public void addItem(MenuItem newItem){
+            holyMoleyAMenu.add(newItem);
+        }
+
+    public static Object showMenu(){
+        System.out.println(holyMoleyAMenu.toString());
+        return null;
     }
 
 }
